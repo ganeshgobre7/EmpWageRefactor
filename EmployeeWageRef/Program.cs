@@ -5,6 +5,7 @@ namespace EmployeeWageRef
     public class calculate
     {
         int full_Time = 8;
+        int part_Time = 4;
         int per_Hour_Sal = 20;
         int one_Day_Sal = 0;
 
@@ -19,7 +20,8 @@ namespace EmployeeWageRef
             }
             else
             {
-                Console.WriteLine("Employee is Absent");
+                one_Day_Sal = part_Time * per_Hour_Sal;
+                Console.WriteLine("Part Time Salary is:" + one_Day_Sal); ;
             }
         }
     }
