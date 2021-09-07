@@ -12,16 +12,23 @@ namespace EmployeeWageRef
         public void check()
         {
             Random random = new Random();
-            int empCheck = random.Next(0, 2);
-            if(empCheck==1)
+            int empCheck = random.Next(0, 3);
+            switch(empCheck)
             {
-                one_Day_Sal = full_Time * per_Hour_Sal;
-                Console.WriteLine("Full Time Salary is:" + one_Day_Sal); ;
-            }
-            else
-            {
-                one_Day_Sal = part_Time * per_Hour_Sal;
-                Console.WriteLine("Part Time Salary is:" + one_Day_Sal); ;
+                case 1:
+
+                    one_Day_Sal = full_Time * per_Hour_Sal;
+                    Console.WriteLine("Full Time Salary is:" + one_Day_Sal);
+                    break;
+
+                case 2:
+                    one_Day_Sal = part_Time * per_Hour_Sal;
+                    Console.WriteLine("Part Time Salary is:" + one_Day_Sal);
+                    break;
+
+                default:
+                    Console.WriteLine("Wrong Input!!Please run the code once again");
+                    break;
             }
         }
     }
