@@ -10,13 +10,25 @@ namespace EmployeeWageRef
         int no_Work_Days = 20;
         int total_Sal = 0;
         int one_Day_Sal = 0;
+        int total_Work_Hours = 0;
 
         public void monthlyWage(int one_Day_sal,int no_Work_Days)
         {
             total_Sal = no_Work_Days * one_Day_sal;
-            Console.WriteLine("Total Salaru of 20 Days in Months :" + total_Sal);
+            Console.WriteLine("Total Salary of 20 Days in Months :" + total_Sal);
         }
-
+        public void hoursDays(int work_Hours,int no_work_Days)
+        {
+            if (work_Hours > 100 || no_Work_Days>=20)
+            {
+                Console.WriteLine("Working Hours : {0} ", work_Hours);
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+        }
+        
         public void check()
         {
             Random random = new Random();
@@ -27,13 +39,17 @@ namespace EmployeeWageRef
 
                     one_Day_Sal = full_Time * per_Hour_Sal;
                     Console.WriteLine("Full Time Salary is:" + one_Day_Sal);
+                    total_Work_Hours = no_Work_Days * full_Time;
                     monthlyWage(one_Day_Sal,no_Work_Days);
+                    hoursDays(total_Work_Hours, no_Work_Days);
                     break;
 
                 case 2:
                     one_Day_Sal = part_Time * per_Hour_Sal;
                     Console.WriteLine("Part Time Salary is:" + one_Day_Sal);
+                    total_Work_Hours = no_Work_Days * part_Time;
                     monthlyWage(one_Day_Sal, no_Work_Days);
+                    hoursDays(total_Work_Hours, no_Work_Days);
                     break;
 
                 default:
