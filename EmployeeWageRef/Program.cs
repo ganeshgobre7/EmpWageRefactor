@@ -7,7 +7,15 @@ namespace EmployeeWageRef
         int full_Time = 8;
         int part_Time = 4;
         int per_Hour_Sal = 20;
+        int no_Work_Days = 20;
+        int total_Sal = 0;
         int one_Day_Sal = 0;
+
+        public void monthlyWage(int one_Day_sal,int no_Work_Days)
+        {
+            total_Sal = no_Work_Days * one_Day_sal;
+            Console.WriteLine("Total Salaru of 20 Days in Months :" + total_Sal);
+        }
 
         public void check()
         {
@@ -19,11 +27,13 @@ namespace EmployeeWageRef
 
                     one_Day_Sal = full_Time * per_Hour_Sal;
                     Console.WriteLine("Full Time Salary is:" + one_Day_Sal);
+                    monthlyWage(one_Day_Sal,no_Work_Days);
                     break;
 
                 case 2:
                     one_Day_Sal = part_Time * per_Hour_Sal;
                     Console.WriteLine("Part Time Salary is:" + one_Day_Sal);
+                    monthlyWage(one_Day_Sal, no_Work_Days);
                     break;
 
                 default:
